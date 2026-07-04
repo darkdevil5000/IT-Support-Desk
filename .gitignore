@@ -1,0 +1,38 @@
+# Local Maven and wrapper files
+apache-maven-3.9.6/
+maven.zip
+.gemini/
+brain/
+scratch/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Client (Frontend) outputs and dependencies
+client/node_modules/
+client/dist/
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/pnpm-debug.log*
+
+# Server (Backend) outputs and dependencies
+server/target/
+server/uploads/
+server/logs/
+server/bin/
+server/out/
+server/*.log
+server/*.db
