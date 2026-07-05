@@ -10,11 +10,12 @@ import {
   Search, 
   User, 
   LogOut, 
-  Check
+  Check,
+  Menu
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ onSearchChange }) => {
+const Navbar = ({ onSearchChange, onToggleSidebar }) => {
   const { user, logout } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const [notifications, setNotifications] = useState([]);
@@ -109,6 +110,13 @@ const Navbar = ({ onSearchChange }) => {
   return (
     <nav className="navbar navbar-expand-lg glass-navbar sticky-top px-4 py-2 d-flex align-items-center justify-content-between">
       <div className="d-flex align-items-center gap-2 w-50">
+        <button
+          onClick={onToggleSidebar}
+          className="btn btn-link text-secondary p-2 rounded-circle hover-bg-light border-0 d-lg-none me-1"
+          style={{ color: 'var(--text-color)' }}
+        >
+          <Menu size={20} />
+        </button>
         {onSearchChange && (
           <div className="input-group input-group-sm w-50 border rounded-pill px-2 py-1 bg-light">
             <span className="input-group-text bg-transparent border-0 text-muted">

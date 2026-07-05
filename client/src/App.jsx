@@ -42,11 +42,19 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
 };
 
 const AppLayout = () => {
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
+
   return (
-    <div className="app-container" style={{ backgroundColor: 'var(--bg-color)' }}>
+    <div className={`app-container ${sidebarOpen ? 'sidebar-open' : ''}`} style={{ backgroundColor: 'var(--bg-color)' }}>
+      {sidebarOpen && (
+        <div 
+          className="sidebar-backdrop d-lg-none"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
       <Sidebar />
       <div className="main-content">
-        <Navbar />
+        <Navbar onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
         <div className="flex-grow-1 overflow-auto">
           <Outlet />
         </div>

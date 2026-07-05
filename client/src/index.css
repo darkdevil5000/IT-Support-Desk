@@ -283,3 +283,51 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="dark"] a.text-dark:hover {
   color: var(--primary-color) !important;
 }
+
+/* Responsive Layout Adjustments */
+@media (max-width: 991.98px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 1040;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .sidebar-open .sidebar {
+    left: 0;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 1030;
+    transition: opacity 0.3s ease;
+  }
+  
+  .navbar {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Make tables and cards wrap gracefully on smaller widths */
+  .container-fluid {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .card {
+    padding: 1.25rem !important;
+  }
+
+  /* Form adjustments */
+  .w-50 {
+    width: 100% !important;
+  }
+}
